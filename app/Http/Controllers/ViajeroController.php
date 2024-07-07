@@ -12,7 +12,7 @@ class ViajeroController extends Controller
      */
     public function index()
     {
-        $libros = Viajero::orderBy('id', 'desc')->get();
+        $viajero = Viajero::orderBy('id', 'desc')->get();
         return view('viajero.index', compact('viajeros'));
     }
 
@@ -35,6 +35,7 @@ class ViajeroController extends Controller
         $viajero->direccion = $request->direccion;
         $viajero->telefono = $request->telefono;
         $viajero->save();
+        return redirect()->route('viajero.index');
     }
 
     /**
@@ -58,7 +59,7 @@ class ViajeroController extends Controller
      */
     public function update(Request $request, Viajero $viajero)
     {
-        $viajero = new Viajero();
+        
         $viajero->dni = $request->dni;
         $viajero->nombre = $request->nombre;
         $viajero->direccion = $request->direccion;

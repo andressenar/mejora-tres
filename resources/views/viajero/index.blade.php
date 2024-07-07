@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <p>aqui estoy</p>
+    @foreach($viajeros as $viajero)
+    <p>{{ $viajero->nombre }} - {{ $viajero->direccion }}</p>
+@endforeach
 </body>
 </html>

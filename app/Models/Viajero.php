@@ -9,8 +9,8 @@ class Viajero extends Model
 {
     use HasFactory;
     /* protected $fillable = ['dni', 'nombre', 'direccion', 'telefono']; */
-    public function viaje(){
-        return $this->hasOne('app\models\viaje');
+    public function viajes(){
+        return $this->hasMany('app\models\viaje');
 
         
 

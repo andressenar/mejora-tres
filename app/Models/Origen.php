@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Origen extends Model
 {
     use HasFactory;
-    public function viaje(){
-        return $this->hasOne('app\models\viaje');
+    public function viajes(){
+        return $this->hasMany('app\models\viaje');
 
     }
 }

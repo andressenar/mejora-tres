@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/viajero',[ViajeroController::class,'create']);
-Route::get('/viajero/menu',[ViajeroController::class,'index'])->name('viajero.index');
+Route::get('viajero/menu',[ViajeroController::class,'index'])->name('viajero.index');
 Route::post('/viajero', [ViajeroController::class,'store'])->name('viajero.store');
 
 
