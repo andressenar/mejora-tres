@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <p>ksnckjdbcd</p>
     
-    <h1>Agregar nuevas categorias</h1>
+    
+    <h1>Agregar viajero</h1>
     <form method="POST" action="{{route('viajero.store')}}">
       @csrf
-        <h1>datos del usuario</h1>
+        <h1>datos del viajero</h1>
       <label>
           dni
           <br>

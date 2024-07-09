@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    h1>Listar libros</h1>
+    h1>Lista viajero</h1>
 
     @foreach ($viajero as $viajero)
     <tr>

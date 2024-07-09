@@ -7,34 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Actualizar viajero</h1>
+    <h1>Actualizar estudiante</h1>
 <form action="{{route('viajero.update', $viajero)}}"  method="POST">
 
     @csrf
     @method('put')
     <label>
-    dni
+    dni:
     <br>
     <input name="dni" type="text" value="{{old('dni',$viajero->dni) }}">
     <br>
     </label>
     <br>
     <label>
-    nombre
+    nombre:
     <br>
     <input name="nombre" type="text" value="{{old('nombre',$viajero->nombre)}}">
     <br>
     </label>
     <br>
-    telefono
+    direccion
     <br>
-    <input name="telefono" type="text" value="{{old('telefono',$viajero->telefono)}}">
+    <input name=" direccion" type="text" value="{{old(' direccion',$viajero->direccion)}}">
     <br>
     </label>
     <br>
-    direccion
+    telefono
     <br>
-    <input name=" direccion" type="text" value="{{old('direccion',$viajero->direccion)}}">
+    <input name=" telefono" type="text" value="{{old('telefono',$viajero->telefono)}}">
     <br>
     </label>
     <button  type="submit">Actualizar viajero</button>
