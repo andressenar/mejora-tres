@@ -11,17 +11,34 @@
     
     <h1>Agregar nuevas categorias</h1>
     <form method="POST" action="{{route('viajero.store')}}">
-        @csrf
-            <div>
-            <label for="exampleInputEmail1" class="form-label">nombre</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombre">
-            <div id="emailHelp" class="form-text"></div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">color</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" name="color">
-          </div>          
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+      @csrf
+        <h1>datos del usuario</h1>
+      <label>
+          dni
+          <br>
+          <input type="text" name="dni">
+      </label>
+      <br>
+      <label>
+          nombre
+          <br>
+          <input type="text" name="nombre">
+      </label>
+      <br>
+      <label>
+          direccion
+          <br>
+          <input type="text" name="direccion">
+      </label>
+      <br>
+      <label>
+          telefono
+          <br>
+          <input type="text" name="telefono">
+      </label>
+      <br>      
+      
+      <button type="submit">Enviar Formulario:</button>
+      </form>
 </body>
 </html>

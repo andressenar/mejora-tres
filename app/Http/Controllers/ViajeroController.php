@@ -13,7 +13,8 @@ class ViajeroController extends Controller
     public function index()
     {
         $viajero = Viajero::orderBy('id', 'desc')->get();
-        return view('viajero.index', compact('viajeros'));
+        return view('viajero.index', compact('viajero'));
+
     }
 
     /**

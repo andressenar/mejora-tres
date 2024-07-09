@@ -7,8 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach($viajeros as $viajero)
-    <p>{{ $viajero->nombre }} - {{ $viajero->direccion }}</p>
+    h1>Listar libros</h1>
+
+    @foreach ($viajero as $viajero)
+    <tr>
+        <br>
+        <td>{{$viajero->dni}}</td>
+        <td>{{$viajero->nombre}}</td>
+        <td>{{$viajero->telefono}}</td>
+        <td>{{$viajero->direccion}}</td>
+        <br>
+        <td><a href="{{route('viajero.show',$viajero->id)}}">Detalle</a></td>
+        <br>
+        <form action="{{route('viajero.destroy',$viajero->id)}}" method="POST">
+            @csrf
+            @method('delete')
+            <button type="submit">Eliminar</button>
+            <br>
+            <td><a href="{{route('viajero.edit',$viajero->id)}}">Editar</a></td> 
+        </form>
 @endforeach
+
 </body>
 </html>
