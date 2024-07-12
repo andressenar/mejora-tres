@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Viaje extends Model
 {
     use HasFactory;
-    public function destino(){
-        return $this->belongsTo('app\models\destino');
+    public function destinos(){
+        return $this->hasmany('app\models\destino');
 
     }
 
@@ -20,8 +20,8 @@ class Viaje extends Model
     }
 
     use HasFactory;
-    public function origen(){
-        return $this->belongsTo('app\models\origen');
+    public function origens(){
+        return $this->hasmany('app\models\origen');
 
     }
 
