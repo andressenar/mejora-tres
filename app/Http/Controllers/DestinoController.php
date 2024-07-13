@@ -12,7 +12,9 @@ class DestinoController extends Controller
      */
     public function index()
     {
-        //
+        $destino = Destino::orderBy('id', 'desc')->get();
+        return view('destino.index', compact('destino'));
+
     }
 
     /**
@@ -20,7 +22,7 @@ class DestinoController extends Controller
      */
     public function create()
     {
-        //
+        return view('destino.create');
     }
 
     /**
@@ -28,7 +30,13 @@ class DestinoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $destino = new Destino();
+        $destino->codigo = $request->codigo;
+        $destino->nombre = $request->nombre;
+        $destino->otros_datos = $request->otros_datos;
+        
+        $destino->save();
+        return redirect()->route('destino.index');
     }
 
     /**
@@ -36,7 +44,7 @@ class DestinoController extends Controller
      */
     public function show(Destino $destino)
     {
-        //
+        return view('destino.show',compact('destino'));
     }
 
     /**
@@ -44,7 +52,7 @@ class DestinoController extends Controller
      */
     public function edit(Destino $destino)
     {
-        //
+        return view('destino.edit',compact('destino'));
     }
 
     /**
@@ -52,7 +60,13 @@ class DestinoController extends Controller
      */
     public function update(Request $request, Destino $destino)
     {
-        //
+        
+        $destino->codigo = $request->codigo;
+        $destino->nombre = $request->nombre;
+        $destino->otros_datos = $request->otros_datos;
+        
+        $destino->save();
+        return redirect()->route('destino.index');
     }
 
     /**
@@ -60,6 +74,7 @@ class DestinoController extends Controller
      */
     public function destroy(Destino $destino)
     {
-        //
+        $destino->delete();
+        return redirect()->route('destino.index');
     }
 }
